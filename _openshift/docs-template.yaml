@@ -5,10 +5,15 @@ metadata:
 parameters:
 - name: GIT_URI
   displayName: Git Uri
-  value: https://github.com/openshift/openshift-docs.git
+  value: https://github.com/xiaoping378/openshift-docs.git
 - name: GIT_REF
   displayName: Git Reference
-  value: master
+  value: cn
+- description: A secret string used to configure the GitHub webhook.
+  displayName: GitHub Webhook Secret
+  from: '[a-zA-Z0-9]{40}'
+  generate: expression
+  name: GITHUB_WEBHOOK_SECRET
 objects:
 - apiVersion: v1
   kind: ImageStream
@@ -53,7 +58,12 @@ objects:
           kind: ImageStreamTag
           name: openshift-docs-s2i:latest
       type: Source
-    triggers: {}
+    triggers:
+    - type: ImageChange
+    - type: ConfigChange
+    - github:
+        secret: ${GITHUB_WEBHOOK_SECRET}
+      type: GitHub
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
