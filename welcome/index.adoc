@@ -1,5 +1,5 @@
 [[welcome-index]]
-= {product-title} {product-version} Documentation
+= {product-title} {product-version} 文档
 {product-author}
 {product-version}
 :data-uri:
@@ -9,6 +9,11 @@
 Welcome to the {product-title} {product-version} documentation, where you can
 find information and guides to help you learn about {product-title} and start
 exploring its features.
+
+[.lead]
+欢迎使用{product-title} {product-version}文档，您可以在其中
+查找信息和指南，帮助您了解{product-title}并开始
+探索其特征。
 
 From getting started with creating your first application, to trying out more
 advanced build and deployment techniques, these resources provide what you need
@@ -20,11 +25,25 @@ ifdef::openshift-dedicated,openshift-online[]
 as an **application developer**.
 endif::[]
 
+从开始创建第一个应用程序到尝试更高级的构建和部署技术，这些资源提供了
+ifdef::openshift-origin,openshift-enterprise[]
+作为**集群管理员**或**应用程序开发人员**
+endif::[]
+ifdef::openshift-dedicated,openshift-online[]
+作为**应用程序开发人员**
+endif::[]
+设置和管理{product-title}环境所需的资源。
+
 [TIP]
 ====
 Use the left navigation bar to browse the documentation, the Search bar in the
 top-left to look for something specific, or the links below to access some
 highlights.
+====
+
+[TIP]
+====
+使用左侧导航栏浏览文档，左上角的搜索栏可查找特定的内容，或使用以下链接访问部分内容。
 ====
 
 ifdef::openshift-origin[]
@@ -40,6 +59,17 @@ a|[none]
 |===
 endif::[]
 
+'''
+[cols="2",frame="none",grid="none"]
+|===
+
+.^|[big]#发布日志#
+a|[none]
+
+* link:https://github.com/openshift/origin/releases[在GitHub上查看所有的版本发布日志]
+
+|===
+endif::[]
 '''
 [cols="2",frame="none",grid="none"]
 |===
@@ -60,6 +90,31 @@ ifdef::openshift-origin[]
 endif::[]
 ifdef::openshift-enterprise[]
 * xref:../install_config/install/quick_install.adoc#install-config-install-quick-install[As a cluster administrator]
+endif::[]
+|===
+
+'''
+[cols="2",frame="none",grid="none"]
+|===
+
+.^|[big]#开启{product-title}之旅#
+a|[none]
+
+ifdef::openshift-enterprise,openshift-origin,openshift-dedicated[]
+* xref:../getting_started/developers_console.adoc#getting-started-developers-console[作为开发人员]
+endif::openshift-enterprise,openshift-origin,openshift-dedicated[]
+
+
+
+ifdef::openshift-online[]
+* xref:../getting_started/index.adoc#getting-started-index[Check out a walkthrough on creating your first app]
+endif::openshift-online[]
+
+ifdef::openshift-origin[]
+* xref:../getting_started/administrators.adoc#getting-started-administrators[作为集群管理员]
+endif::[]
+ifdef::openshift-enterprise[]
+* xref:../install_config/install/quick_install.adoc#install-config-install-quick-install[作为集群管理员r]
 endif::[]
 |===
 
