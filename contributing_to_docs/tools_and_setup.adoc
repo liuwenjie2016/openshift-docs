@@ -13,12 +13,26 @@ toc::[]
 Before you can contribute to OpenShift documentation, you must
 https://www.github.com/join[sign up for a GitHub account].
 
+== 创建GitHub账号
+贡献Openshift汉化文档项目前，
+https://www.github.com/join[先申请个GitHub账号吧].
+
 == Set up authentication
 When you have your account set up, follow the instructions to
 https://help.github.com/articles/generating-ssh-keys/[generate and set up SSH
 keys on GitHub] for proper authentication between your workstation and GitHub.
 
 Confirm authentication is working correctly with the following command:
+
+----
+$ ssh -T git@github.com
+----
+
+== 设置认证
+当您设置帐户时，请按照 https://help.github.com/articles/generating-ssh-keys/[在GitHub上生成并设置SSH密钥]的说明，
+在工作站和GitHub之间进行正确的身份验证。
+
+使用以下命令确认身份验证是否正常工作：
 
 ----
 $ ssh -T git@github.com
@@ -51,6 +65,27 @@ $ git remote add upstream git@github.com:openshift/openshift-docs.git
 This ensures that you are tracking the remote repository to keep your local
 repository in sync with it.
 
+== Fork 和 clone此项目
+必须在您的机器上fork和设置此项目，以便您可以创建PR和贡献。 这些步骤只需要
+一开始设置一次就OK了。
+
+1. 通过GitHub的界面Fork此项目 https://github.com/xiaoping378/openshift-docs
+ 就是点击右上角的`Fork`按钮
+
+2. 克隆你刚才fork出来的项目到本地，自行替换_<user_name>_部分.
++
+----
+$ git clone git@github.com:user_name/openshift-docs.git
+----
+
+3. 进入_openshift-docs_目录，添加远程上游.
++
+----
+$ git remote add upstream git@github.com:xiaoping378/openshift-docs.git
+----
+
+这确保您正在跟踪远程代码仓，以保证您的本地代码与它同步。
+
 == Install AsciiBinder and dependencies
 When you have the documentation repository cloned and set up, you are ready to
 install the software and tools you will use to create the content. All OpenShift
@@ -59,6 +94,13 @@ which is an http://asciidoctor.org/[AsciiDoctor]-based docs management system.
 
 You can work on a topic file in an editing environment that automatically
 processes and updates the rendered HTML.
+
+== 安装AsciiBinder
+克隆并设置此项目后，接下来准备好安装将用于生成html内容的软件和工具。
+所有OpenShift文档在AsciiDoc中创建，并由 http://asciibinder.org[AsciiBinder]处理，
+这是一个基于 http://asciidoctor.org/[AsciiDoctor]的文档管理系统。
+
+你可以做到实时编辑并预览web页面
 
 === What you need
 The following are minimum requirements to set up a live editing environment:
@@ -69,6 +111,14 @@ of the box, but if you are on Windows you can use http://cygwin.com/[Cygwin])
 * http://www.git-scm.com/[Git]
 * A web browser (Firefox, Chrome, or Safari) with the
 http://livereload.com/[LiveReload] extension installed
+
+=== 需要什么
+准备汉化开发环境的最小依赖:
+
+* 一个bash终端环境(Linux和OS X已经自带了, windows上话可以使用 http://cygwin.com/[Cygwin]，或者开虚机)
+* https://www.ruby-lang.org/en/[Ruby]
+* http://www.git-scm.com/[Git]
+* 浏览器上最好安装此插件 http://livereload.com/[LiveReload]， 不想装的话就手动F5吧
 
 === Install the required software dependencies on a Linux system
 The following instructions describe how to install all the required tools to do
@@ -82,6 +132,23 @@ live content editing on a Fedora Linux system.
 6. Install the _ascii_binder_ gem with `gem install ascii_binder`
 
 NOTE: If you already have AsciiBinder installed, you may be due for an update. These directions assume that you are using AsciiBinder 0.0.8 or newer. To check and update if necessary, simply run `gem update ascii_binder`. Note that you may need root permissions.
+
+=== 安装依赖软件
+以下说明介绍如何安装所有必需的工具，以便在Fedora Linux系统上进行实时内容编辑。
+
+1. 安装 _RubyGems_ `yum install rubygems`
+2. 安装 _Ruby_ 开发包 `yum install ruby-devel`
+3. 安装 _gcc_  `yum install gcc-c++`
+4. 安装 _redhat-rpm-config_ `yum install redhat-rpm-config`
+5. 安装 _make_ `yum install make`
+6. 安装_ascii_binder_  `gem install ascii_binder`
+
+NOTE: 如果已经安装了AsciiBinder， 确保其版本大于0.0.8， 简单的跑下`gem update ascii_binder`，是肯定OK的
+
+=== 剩下的就简单了，略翻。。。
+
+1. 通过`asciibinder build`编译
+2. 通过`asciibinder watch`实时查看编译出来的HTML文档
 
 === Initial setup
 After you have confirmed that you meet the minimum system requirements, or if

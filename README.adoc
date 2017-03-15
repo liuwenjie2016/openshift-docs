@@ -15,32 +15,32 @@ Welcome to the OpenShift documentation GitHub repository that contains the sourc
     git clone --depth=1 https://github.com/xiaoping378/openshift-docs.git
   - 编译
     cd openshift-docs && asciibinder build
+    #怎么安装asciibinder，下边有介绍
   - 结果会存放在 _preview下
     cd _preview && python -m SimpleHTTPServer
   - 打开浏览器访问127.0.0.1:8000
 
 == 贡献本项目
-If you are interested in contributing to OpenShift technical documentation, you can view all our link:./contributing_to_docs[resources] that will help you get set up and provide more information.
+来吧，做点儿利民利己的事情吧
 
-
-The following table provides quick links to help you get started.
+下表提供了些怎么开始的链接.
 
 [options="header"]
 |===
 
-|Question |Link
+|问题 |链接
 
-|I'm interested, how do I contribute?
-|See the link:/contributing_to_docs/contributing.adoc[contributing] topic to learn more about this repository and how you can contribute.
+|我很感兴趣，怎么贡献此项目?
+|查看link:/contributing_to_docs/contributing.adoc[contributing]，更多了解此项目，介绍了怎么贡献
 
-|Are there any basic guidelines to help me?
-|The link:/contributing_to_docs/doc_guidelines.adoc[documentation guidelines] topic provides some basic guidelines to help us keep our content consistent, and includes other style information.
+|没写过adoc文件?
+|link:/contributing_to_docs/doc_guidelines.adoc[documentation guidelines] 这里提供了一些基本指南，以帮助我们保持内容一致，并包括其他样式信息。
 
-|How do I set up my workstation?
-|See the link:/contributing_to_docs/tools_and_setup.adoc[tools and setup] topic to set up your workstation.
+|如何设置汉化开发环境?
+|link:/contributing_to_docs/tools_and_setup.adoc[工具步骤篇] 介绍了如果展开汉化开发环境.
 
-|How do I edit an existing topic, or create new content?
-|See the link:/contributing_to_docs/create_or_edit_content.adoc[create or edit content] topic to get started.
+|如果更改或者添加新内容?
+|link:/contributing_to_docs/create_or_edit_content.adoc[create or edit content]，来吧，照猫画虎呗
 |===
 
 == 联系方式
